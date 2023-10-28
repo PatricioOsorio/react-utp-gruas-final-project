@@ -1,46 +1,36 @@
 const FooterPublic = () => {
   return (
-    <div className="d-block mt-auto py-3 bg-light">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-4">
-            <h5>Enlaces</h5>
-            <ul className="list-unstyled">
-              <li>
-                <a href="#">Inicio</a>
-              </li>
-              <li>
-                <a href="#">Productos</a>
-              </li>
-              <li>
-                <a href="#">Contacto</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-4">
-            <h5>Redes sociales</h5>
-            <ul className="list-unstyled">
-              <li>
-                <a href="#">Facebook</a>
-              </li>
-              <li>
-                <a href="#">Twitter</a>
-              </li>
-              <li>
-                <a href="#">Instagram</a>
-              </li>
-            </ul>
-          </div>
-          <div className="col-lg-4">
-            <h5>Información de contacto</h5>
-            <p>Dirección: Calle Principal, Ciudad</p>
-            <p>Teléfono: 123-456-789</p>
-            <p>Email: info@example.com</p>
-          </div>
+    <footer className="d-block mt-auto bg-light border-top">
+      <div className="d-flex flex-wrap justify-content-between align-items-center py-3 container">
+        <div className="col-md-8 d-flex align-items-center">
+          <a
+            href="/"
+            className="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1"
+          ></a>
+          <span className="mb-3 mb-md-0 text-body-secondary">
+            © 2023 - Plataforma de grúas para el Estado de Puebla.
+          </span>
         </div>
-        <span className="text-muted">© 2023 Nombre de la empresa. Todos los derechos reservados.</span>
+
+        <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
+          <li className="ms-3">
+            <a className="text-body-secondary" href="#">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li className="ms-3">
+            <a className="text-body-secondary" href="#">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li className="ms-3">
+            <a className="text-body-secondary" href="#">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
+    </footer>
   );
 };
 

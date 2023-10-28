@@ -1,18 +1,14 @@
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet} from 'react-router-dom';
 import FooterPublic from './FooterPublic';
 
 const HeaderPublic = () => {
-  const { state } = useLocation();
-
-  console.log(state);
-
   return (
     <>
       <header
-        className="container-fluid bg-light"
+        className="container-fluid"
         style={{ marginBottom: '4rem' }}
       >
-        <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top shadow-sm  ">
+        <nav className="navbar navbar-expand-lg bg-primary fixed-top shadow" data-bs-theme="dark">
           <div className="container">
             <button
               className="navbar-toggler"
@@ -31,7 +27,7 @@ const HeaderPublic = () => {
             >
               <div>
                 <Link className="navbar-brand fw-bold ms-auto" to="/">
-                  Muebleria
+                  Gruas
                 </Link>
               </div>
               <ul className="navbar-nav">
@@ -40,28 +36,13 @@ const HeaderPublic = () => {
                     Inicio
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link fw-bold" to="/catalogue">
-                    Catálogo
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link fw-bold" to="/aboutus">
-                    Nosotros
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link fw-bold" to="/contact">
-                    Contacto
-                  </Link>
-                </li>
               </ul>
               <div className="d-flex">
-                <Link className="btn btn-outline-primary me-2" to="/login">
-                  <i className="fa-solid fa-right-to-bracket"></i>
+                <Link className="btn btn-outline-secondary me-2" to="/IniciarSesion">
+                  <i className="fa-solid fa-right-to-bracket me-1"></i>Iniciar sesion
                 </Link>
-                <Link className="btn btn-primary" to="/register">
-                  <i className="fas fa-user-edit"></i>
+                <Link className="btn btn-secondary" to="/Registrar">
+                  <i className="fas fa-user-edit me-1"></i>Registro
                 </Link>
               </div>
             </div>
