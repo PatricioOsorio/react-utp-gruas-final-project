@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+import { redirect } from 'react-router-dom';
 import img from '../assets/icons/register.svg';
 import imgBackground from '../assets/images/background.png';
+import { URL_REGISTER } from '../endpoints';
+import { helpHttpAsync } from '../helpers/helpHttpAsync';
+import SweetAlertModal from '../components/SweetAlertModal';
+import SweetAlertToast from '../components/SweetAlertToast';
 
 const initialForm = {
   email: '',
@@ -11,7 +14,6 @@ const initialForm = {
 
 const RegisterPage = () => {
   const [form, setForm] = useState(initialForm);
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({
@@ -20,27 +22,46 @@ const RegisterPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    // Previene el funcionamiento por defecto (evita recarga de página)
     e.preventDefault();
 
+    // Verificar que los campos no estén vacíos
     if (!form.email || !form.password) {
-      Swal.fire({
-        title: 'Oops...',
-        text: '¡Uno o más campos están vacíos!',
+      await SweetAlertModal({
+        title: 'Oops..',
+        textDescription: '¡Uno o más campos están vacíos!',
         icon: 'warning',
-        iconColor: 'var(--bs-warning)',
-        confirmButtonColor: 'var(--bs-primary)',
-        confirmButtonText: 'Entiendo',
+        confirmButtonColor: 'var(--bs-warning)' 
       });
       return;
     }
 
-    navigate('/manager', {
-      replace: true,
-      state: { logged: true, email: form.email },
-    });
+    const options = {
+      headers: { 'Content-Type': 'application/json' },
+      body: {
+        userName: form.email,
+        password: form.password,
+      },
+    };
 
-    handleReset();
+    try {
+      const response = await helpHttpAsync().post(URL_REGISTER, options);
+
+      console.log(response);
+
+      if (response == '¡Registro correcto!') {
+        handleReset();
+        SweetAlertToast('success', '¡Registro correcto!');
+      } else {
+        SweetAlertToast('error', '¡Ocurrió un error al registrar!');
+      }
+    } catch (error) {
+      console.log('entra al catch');
+      const errorObj = JSON.parse(error.message);
+      console.error(errorObj);
+      // console.error(error);
+    }
   };
 
   const handleReset = () => {

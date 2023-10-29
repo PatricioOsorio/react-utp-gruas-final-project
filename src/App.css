@@ -1,5 +1,6 @@
 body {
-  font-family: 'Poppins', sans-serif !important;
+  /* font-family: 'Poppins', sans-serif !important; */
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" !important;
   /* background-image: url('https://tailwindcss.com/_next/static/media/docs@tinypng.d9e4dcdc.png');
   background-repeat: no-repeat;
   background-size: cover;

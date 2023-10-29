@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
 import img from '../assets/icons/login.svg';
 import imgBackground from '../assets/images/background.png';
+import SweetAlertModal from '../components/SweetAlertModal';
+import SweetAlertToast from '../components/SweetAlertToast';
+import { URL_LOGIN } from '../endpoints';
+import { helpHttpAsync } from '../helpers/helpHttpAsync';
 
 const initialForm = {
   email: '',
@@ -20,27 +23,40 @@ const LoginPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!form.email || !form.password) {
-      Swal.fire({
-        title: 'Oops...',
-        text: '¡Uno o más campos están vacíos!',
+      await SweetAlertModal({
+        title: 'Oops..',
+        textDescription: '¡Uno o más campos están vacíos!',
         icon: 'warning',
-        iconColor: 'var(--bs-warning)',
-        confirmButtonColor: 'var(--bs-primary)',
-        confirmButtonText: 'Entiendo',
+        confirmButtonColor: 'var(--bs-warning)',
       });
       return;
     }
 
-    navigate('/manager', {
-      replace: true,
-      state: { logged: true, email: form.email },
-    });
+    const options = {
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: {
+        userName: form.email,
+        password: form.password,
+      },
+    };
 
-    handleReset();
+    try {
+      const response = await helpHttpAsync().post(URL_LOGIN, options);
+
+      if (!response.err) {
+        SweetAlertToast('success', '¡Inicio correcto!');
+        console.log(response);
+      } else {
+        SweetAlertToast('error', '¡Ocurrió error al iniciar sesion!');
+      }
+    } catch (error) {
+      SweetAlertToast('error', '¡Ocurrió error al iniciar sesion!');
+    }
   };
 
   const handleReset = () => {

@@ -1,6 +1,6 @@
 const FooterPublic = () => {
   return (
-    <footer className="d-block mt-auto bg-light border-top">
+    <footer className="d-block mt-auto bg-light">
       <div className="d-flex flex-wrap justify-content-between align-items-center py-3 container">
         <div className="col-md-8 d-flex align-items-center">
           <a
@@ -15,17 +15,17 @@ const FooterPublic = () => {
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li className="ms-3">
             <a className="text-body-secondary" href="#">
-              <i class="fab fa-facebook"></i>
+              <i className="fab fa-facebook"></i>
             </a>
           </li>
           <li className="ms-3">
             <a className="text-body-secondary" href="#">
-              <i class="fab fa-twitter"></i>
+              <i className="fab fa-twitter"></i>
             </a>
           </li>
           <li className="ms-3">
             <a className="text-body-secondary" href="#">
-              <i class="fab fa-instagram"></i>
+              <i className="fab fa-instagram"></i>
             </a>
           </li>
         </ul>
