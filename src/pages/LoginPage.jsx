@@ -1,41 +1,22 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import img from '../assets/icons/login.svg';
 import imgBackground from '../assets/images/background.png';
-import SweetAlertModal from '../components/SweetAlertModal';
 import SweetAlertToast from '../components/SweetAlertToast';
 import { URL_LOGIN } from '../endpoints';
 import { helpHttpAsync } from '../helpers/helpHttpAsync';
 
-const initialForm = {
-  email: '',
-  password: '',
-};
+import { useFormik } from 'formik';
+import { loginValidationSchema } from '../validationSchemas/login';
 
 const LoginPage = () => {
-  const [form, setForm] = useState(initialForm);
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
+  const styles = {
+    background: 'rgba(255, 255, 255, 0.3)',
+    boxShadow: '0 8px 32px 0 rgba(0, 46, 111, 0.3)',
+    backdropFilter: 'blur(15px)',
+    borderRadius: '15px',
+    border: '1px solid rgba(255, 255, 255, 0.25)',
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!form.email || !form.password) {
-      await SweetAlertModal({
-        title: 'Oops..',
-        textDescription: '¡Uno o más campos están vacíos!',
-        icon: 'warning',
-        confirmButtonColor: 'var(--bs-warning)',
-      });
-      return;
-    }
-
+  const handleSubmit = async (form) => {
     const options = {
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
@@ -59,17 +40,19 @@ const LoginPage = () => {
     }
   };
 
-  const handleReset = () => {
-    setForm(initialForm);
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    validationSchema: loginValidationSchema,
+    onSubmit: async (values) => {
+      console.log('Formulario enviado:', values);
+      handleSubmit(values);
+    },
+  });
 
-  const styles = {
-    background: 'rgba(255, 255, 255, 0.3)',
-    boxShadow: '0 8px 32px 0 rgba(0, 46, 111, 0.3)',
-    backdropFilter: 'blur(15px)',
-    borderRadius: '15px',
-    border: '1px solid rgba(255, 255, 255, 0.25)',
-  };
+  const handleReset = () => formik.resetForm();
 
   return (
     <>
@@ -102,31 +85,59 @@ const LoginPage = () => {
                 sequi, rem nam!
               </p>
 
-              <form onSubmit={handleSubmit}>
-                <div className="form-floating mb-3">
+              <form
+                onSubmit={formik.handleSubmit}
+                className="needs-validation"
+                noValidate
+              >
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="email">
+                    Correo electronico
+                  </label>
                   <input
                     type="email"
-                    className="form-control"
                     id="email"
                     name="email"
+                    className={`form-control ${
+                      formik.touched.password && formik.errors.password
+                        ? 'is-invalid'
+                        : ''
+                    }`}
                     placeholder="Correo electronico"
-                    onChange={handleChange}
-                    value={form.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
                   />
-                  <label htmlFor="email">Correo electronico</label>
+                  {formik.touched.email && formik.errors.email && (
+                    <div className="invalid-feedback">
+                      {formik.errors.email}
+                    </div>
+                  )}
                 </div>
 
-                <div className="form-floating mb-3">
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="password">
+                    Contraseña
+                  </label>
                   <input
                     type="password"
-                    className="form-control"
                     id="password"
                     name="password"
+                    className={`form-control ${
+                      formik.touched.password && formik.errors.password
+                        ? 'is-invalid'
+                        : ''
+                    }`}
                     placeholder="Contraseña"
-                    onChange={handleChange}
-                    value={form.password}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.password}
                   />
-                  <label htmlFor="password">Contraseña</label>
+                  {formik.touched.password && formik.errors.password && (
+                    <div className="invalid-feedback">
+                      {formik.errors.password}
+                    </div>
+                  )}
                 </div>
 
                 <div className="d-flex justify-content-between">
