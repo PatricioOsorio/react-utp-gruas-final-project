@@ -1,44 +1,16 @@
-import { useState } from 'react';
-import { redirect } from 'react-router-dom';
 import img from '../assets/icons/register.svg';
 import imgBackground from '../assets/images/background.png';
 import { URL_REGISTER } from '../endpoints';
 import { helpHttpAsync } from '../helpers/helpHttpAsync';
-import SweetAlertModal from '../components/SweetAlertModal';
 import SweetAlertToast from '../components/SweetAlertToast';
-
-const initialForm = {
-  email: '',
-  password: '',
-};
+import { useFormik } from 'formik';
+import { registerValidationSchema } from '../validationSchemas/register';
 
 const RegisterPage = () => {
-  const [form, setForm] = useState(initialForm);
-
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    // Previene el funcionamiento por defecto (evita recarga de página)
-    e.preventDefault();
-
-    // Verificar que los campos no estén vacíos
-    if (!form.email || !form.password) {
-      await SweetAlertModal({
-        title: 'Oops..',
-        textDescription: '¡Uno o más campos están vacíos!',
-        icon: 'warning',
-        confirmButtonColor: 'var(--bs-warning)' 
-      });
-      return;
-    }
-
+  const handleSubmit = async (form) => {
     const options = {
       headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
       body: {
         userName: form.email,
         password: form.password,
@@ -48,33 +20,31 @@ const RegisterPage = () => {
     try {
       const response = await helpHttpAsync().post(URL_REGISTER, options);
 
-      console.log(response);
-
       if (response == '¡Registro correcto!') {
+        SweetAlertToast('success', '¡Inicio correcto!');
         handleReset();
-        SweetAlertToast('success', '¡Registro correcto!');
       } else {
-        SweetAlertToast('error', '¡Ocurrió un error al registrar!');
+        SweetAlertToast('error', '¡Correo o contraseña incorrecta!');
       }
     } catch (error) {
-      console.log('entra al catch');
-      const errorObj = JSON.parse(error.message);
-      console.error(errorObj);
-      // console.error(error);
+      SweetAlertToast('error', '¡Ocurrió error al iniciar sesion!');
     }
   };
 
-  const handleReset = () => {
-    setForm(initialForm);
-  };
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+      confirmPassword: '',
+    },
+    validationSchema: registerValidationSchema,
+    onSubmit: async (values) => {
+      console.log('Formulario enviado:', values);
+      handleSubmit(values);
+    },
+  });
 
-  const styles = {
-    background: 'rgba(255, 255, 255, 0.3)',
-    boxShadow: '0 8px 32px 0 rgba(0, 46, 111, 0.3)',
-    backdropFilter: 'blur(15px)',
-    borderRadius: '15px',
-    border: '1px solid rgba(255, 255, 255, 0.25)',
-  };
+  const handleReset = () => formik.resetForm();
 
   return (
     <>
@@ -98,40 +68,97 @@ const RegisterPage = () => {
                 style={{ maxWidth: '350px' }}
               />
             </div>
-            <div className="col-lg-5 px-4 py-5" style={styles}>
-              <h1>Registro</h1>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti excepturi quasi, maxime eaque est rem. Explicabo quia
-                eaque labore deleniti qui maxime dolor unde, blanditiis quas ab
-                sequi, rem nam!
-              </p>
-
-              <form onSubmit={handleSubmit}>
-                <div className="form-floating mb-3">
+            <div className="col-lg-5 px-4 py-5 form-login-register">
+              <form
+                onSubmit={formik.handleSubmit}
+                className={`needs-validation ${
+                  formik.touched.length > 0 && formik.isValid
+                    ? 'was-validated'
+                    : ''
+                }`}
+                noValidate
+              >
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="email">
+                    Correo electronico
+                  </label>
                   <input
                     type="email"
-                    className="form-control"
                     id="email"
                     name="email"
+                    className={`form-control ${
+                      formik.touched.email && formik.errors.email
+                        ? 'is-invalid'
+                        : formik.touched.email
+                        ? 'is-valid'
+                        : ''
+                    }`}
                     placeholder="Correo electronico"
-                    onChange={handleChange}
-                    value={form.email}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.email}
                   />
-                  <label htmlFor="email">Correo electronico</label>
+                  {formik.touched.email && formik.errors.email && (
+                    <div className="invalid-feedback">
+                      {formik.errors.email}
+                    </div>
+                  )}
                 </div>
 
-                <div className="form-floating mb-3">
+                <div className="mb-3">
+                  <label className="form-label" htmlFor="password">
+                    Contraseña
+                  </label>
                   <input
                     type="password"
-                    className="form-control"
                     id="password"
                     name="password"
+                    className={`form-control ${
+                      formik.touched.password && formik.errors.password
+                        ? 'is-invalid'
+                        : formik.touched.password
+                        ? 'is-valid'
+                        : ''
+                    }`}
                     placeholder="Contraseña"
-                    onChange={handleChange}
-                    value={form.password}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.password}
                   />
-                  <label htmlFor="password">Contraseña</label>
+                  {formik.touched.password && formik.errors.password && (
+                    <div className="invalid-feedback">
+                      {formik.errors.password}
+                    </div>
+                  )}
+                </div>
+
+                <div className="mb-3">
+                  <label htmlFor="confirmPassword" className="form-label">
+                    Confirmar Contraseña
+                  </label>
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    className={`form-control ${
+                      formik.touched.confirmPassword &&
+                      formik.errors.confirmPassword
+                        ? 'is-invalid'
+                        : formik.touched.confirmPassword
+                        ? 'is-valid'
+                        : ''
+                    }`}
+                    placeholder="Confirmar Contraseña"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.confirmPassword}
+                  />
+                  {formik.touched.confirmPassword &&
+                    formik.errors.confirmPassword && (
+                      <div className="invalid-feedback">
+                        {formik.errors.confirmPassword}
+                      </div>
+                    )}
                 </div>
 
                 <div className="d-flex justify-content-between">

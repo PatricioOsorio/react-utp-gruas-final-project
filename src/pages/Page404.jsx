@@ -6,150 +6,32 @@ const Page404 = () => {
 
   return (
     <>
-      <div className="page404-container page404-container-star">
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-1"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-        <div className="page404-star-2"></div>
-      </div>
-      <div className="page404-container page404-container-bird">
-        <div className="page404-bird page404-bird-anim">
-          <div className="page404-bird-container">
-            <div className="page404-wing page404-wing-left">
-              <div className="page404-wing-left-top"></div>
-            </div>
-            <div className="page404-wing page404-wing-right">
-              <div className="page404-wing-right-top"></div>
-            </div>
-          </div>
-        </div>
-        <div className="page404-bird page404-bird-anim">
-          <div className="page404-bird-container">
-            <div className="page404-wing page404-wing-left">
-              <div className="page404-wing-left-top"></div>
-            </div>
-            <div className="page404-wing page404-wing-right">
-              <div className="page404-wing-right-top"></div>
-            </div>
-          </div>
-        </div>
-        <div className="page404-bird page404-bird-anim">
-          <div className="page404-bird-container">
-            <div className="page404-wing page404-wing-left">
-              <div className="page404-wing-left-top"></div>
-            </div>
-            <div className="page404-wing page404-wing-right">
-              <div className="page404-wing-right-top"></div>
-            </div>
-          </div>
-        </div>
-        <div className="page404-bird page404-bird-anim">
-          <div className="page404-bird-container">
-            <div className="page404-wing page404-wing-left">
-              <div className="page404-wing-left-top"></div>
-            </div>
-            <div className="page404-wing page404-wing-right">
-              <div className="page404-wing-right-top"></div>
-            </div>
-          </div>
-        </div>
-        <div className="page404-bird page404-bird-anim">
-          <div className="page404-bird-container">
-            <div className="page404-wing page404-wing-left">
-              <div className="page404-wing-left-top"></div>
-            </div>
-            <div className="page404-wing page404-wing-right">
-              <div className="page404-wing-right-top"></div>
-            </div>
-          </div>
-        </div>
-        <div className="page404-bird page404-bird-anim">
-          <div className="page404-bird-container">
-            <div className="page404-wing page404-wing-left">
-              <div className="page404-wing-left-top"></div>
-            </div>
-            <div className="page404-wing page404-wing-right">
-              <div className="page404-wing-right-top"></div>
-            </div>
-          </div>
-        </div>
-        <div className="page404-container-title">
-          <div className="page404-title">
-            <div className="page404-number">4</div>
-            <div className="page404-moon">
-              <div className="page404-face">
-                <div className="page404-mouth"></div>
-                <div className="page404-eyes">
-                  <div className="page404-eye-left"></div>
-                  <div className="page404-eye-right"></div>
+      <section className="page_404">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-12 ">
+              <div className="col-sm-10 col-sm-offset-1  text-center">
+                <div className="four_zero_four_bg">
+                  <h1 className="text-center ">404</h1>
+                </div>
+
+                <div className="contant_box_404">
+                  <h3 className="h2">Look like you're lost</h3>
+
+                  <p>the page you are looking for not avaible!</p>
+
+                  <button
+                    onClick={() => navigate(-1)}
+                    className="btn btn-primary"
+                  >
+                    Regresar
+                  </button>
                 </div>
               </div>
             </div>
-            <div className="page404-number">4</div>
           </div>
-          <div className="page404-subtitle">
-            Oops. Parece que estás perdido.<br/>
-            <small>La página que estás buscando no está disponible.</small>
-          </div>
-          <button onClick={()=>navigate(-1)} className='page404-button'>Regresar</button>
         </div>
-      </div>
+      </section>
     </>
   );
 };

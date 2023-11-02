@@ -6,16 +6,9 @@ import { helpHttpAsync } from '../helpers/helpHttpAsync';
 
 import { useFormik } from 'formik';
 import { loginValidationSchema } from '../validationSchemas/login';
+import { redirect } from 'react-router-dom';
 
 const LoginPage = () => {
-  const styles = {
-    background: 'rgba(255, 255, 255, 0.3)',
-    boxShadow: '0 8px 32px 0 rgba(0, 46, 111, 0.3)',
-    backdropFilter: 'blur(15px)',
-    borderRadius: '15px',
-    border: '1px solid rgba(255, 255, 255, 0.25)',
-  };
-
   const handleSubmit = async (form) => {
     const options = {
       headers: { 'Content-Type': 'application/json' },
@@ -31,9 +24,10 @@ const LoginPage = () => {
 
       if (!response.err) {
         SweetAlertToast('success', '¡Inicio correcto!');
+        // redirect('./private')
         console.log(response);
       } else {
-        SweetAlertToast('error', '¡Ocurrió error al iniciar sesion!');
+        SweetAlertToast('error', '¡Correo o contraseña incorrecta!');
       }
     } catch (error) {
       SweetAlertToast('error', '¡Ocurrió error al iniciar sesion!');
@@ -71,23 +65,22 @@ const LoginPage = () => {
             <div className="col-lg-6 d-flex align-content-center justify-content-center ">
               <img
                 src={img}
-                alt=""
                 className="img-fluid"
                 style={{ maxWidth: '350px' }}
               />
             </div>
-            <div className="col-lg-5 px-4 py-5" style={styles}>
+            <div className="col-lg-5 px-4 py-5 form-login-register">
               <h1>Iniciar sesion</h1>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti excepturi quasi, maxime eaque est rem. Explicabo quia
-                eaque labore deleniti qui maxime dolor unde, blanditiis quas ab
-                sequi, rem nam!
-              </p>
 
               <form
                 onSubmit={formik.handleSubmit}
-                className="needs-validation"
+                className={`needs-validation ${
+                  formik.touched.length > 0 && formik.isValid
+                    ? 'was-validated'
+                    : ''
+                }`}
+                // className={`needs-validation ${formik.isValid? 'was-validated' : ''}`}
+                // className={`${formik.isValid ? 'was-validated' : 'needs-validation'}`}
                 noValidate
               >
                 <div className="mb-3">
@@ -99,8 +92,10 @@ const LoginPage = () => {
                     id="email"
                     name="email"
                     className={`form-control ${
-                      formik.touched.password && formik.errors.password
+                      formik.touched.email && formik.errors.email
                         ? 'is-invalid'
+                        : formik.touched.email
+                        ? 'is-valid'
                         : ''
                     }`}
                     placeholder="Correo electronico"
@@ -113,6 +108,9 @@ const LoginPage = () => {
                       {formik.errors.email}
                     </div>
                   )}
+                  {/* {formik.touched.email && !formik.errors.email && (
+                    <div className="valid-feedback">¡Parece bien!</div>
+                  )} */}
                 </div>
 
                 <div className="mb-3">
@@ -123,9 +121,16 @@ const LoginPage = () => {
                     type="password"
                     id="password"
                     name="password"
+                    // className={`form-control ${
+                    //   formik.touched.password && formik.errors.password
+                    //     ? 'is-invalid'
+                    //     : 'is-valid'
+                    // }`}
                     className={`form-control ${
                       formik.touched.password && formik.errors.password
                         ? 'is-invalid'
+                        : formik.touched.password
+                        ? 'is-valid'
                         : ''
                     }`}
                     placeholder="Contraseña"
@@ -138,6 +143,9 @@ const LoginPage = () => {
                       {formik.errors.password}
                     </div>
                   )}
+                  {/* {formik.touched.email && !formik.errors.email && (
+                    <div className="valid-feedback">¡Parece bien!</div>
+                  )} */}
                 </div>
 
                 <div className="d-flex justify-content-between">

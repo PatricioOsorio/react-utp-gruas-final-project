@@ -1,19 +1,29 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import HeaderPublic from './pages/public/HeaderPublic';
-import HomePagePublic from './pages/public/HomePagePublic';
-import Page404 from './pages/Page404';
+
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+
+import LayoutPublic from './pages/public/LayoutPublic';
+import HomePublic from './pages/public/HomePublic';
+
+import LayoutPrivate from './pages/private/LayoutPrivate';
+
+import Page404 from './pages/Page404';
+import HomePrivate from './pages/private/HomePrivate';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HeaderPublic />}>
-          <Route index element={<HomePagePublic />} />
+        <Route path="/" element={<LayoutPublic />}>
+          <Route index element={<HomePublic />} />
           <Route path="IniciarSesion" element={<LoginPage />} />
           <Route path="Registrar" element={<RegisterPage />} />
+        </Route>
+
+        <Route path="/private" element={<LayoutPrivate />}>
+          <Route index element={<HomePrivate />} />
         </Route>
 
         {/* <Route path="/manager" element={<HeaderAdmin />}>

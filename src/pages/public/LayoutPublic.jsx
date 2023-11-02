@@ -1,7 +1,7 @@
 import { Link, Outlet} from 'react-router-dom';
 import FooterPublic from './FooterPublic';
 
-const HeaderPublic = () => {
+const LayoutPublic = () => {
   return (
     <>
       <header
@@ -57,4 +57,4 @@ const HeaderPublic = () => {
   );
 };
 
-export default HeaderPublic;
+export default LayoutPublic;
