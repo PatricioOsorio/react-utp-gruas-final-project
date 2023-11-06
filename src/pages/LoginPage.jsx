@@ -1,5 +1,4 @@
 import img from '../assets/icons/login.svg';
-import imgBackground from '../assets/images/background.png';
 import SweetAlertToast from '../components/SweetAlertToast';
 import { URL_LOGIN } from '../endpoints';
 import { helpHttpAsync } from '../helpers/helpHttpAsync';
@@ -50,16 +49,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div
-        className="container-fluid"
-        style={{
-          backgroundImage: `url(${imgBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          height: '100vh',
-        }}
-      >
+      <div className="container-fluid">
         <div className="container mb-5">
           <div className="row mt-5 mh-100 d-flex align-content-center">
             <div className="col-lg-6 d-flex align-content-center justify-content-center ">
@@ -70,7 +60,7 @@ const LoginPage = () => {
               />
             </div>
             <div className="col-lg-5 px-4 py-5 form-login-register">
-              <h1>Iniciar sesion</h1>
+              <h1 className="text-center text-primary mb-5">Iniciar sesion</h1>
 
               <form
                 onSubmit={formik.handleSubmit}
@@ -79,8 +69,6 @@ const LoginPage = () => {
                     ? 'was-validated'
                     : ''
                 }`}
-                // className={`needs-validation ${formik.isValid? 'was-validated' : ''}`}
-                // className={`${formik.isValid ? 'was-validated' : 'needs-validation'}`}
                 noValidate
               >
                 <div className="mb-3">

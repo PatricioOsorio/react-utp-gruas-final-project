@@ -1,5 +1,4 @@
 import img from '../assets/icons/register.svg';
-import imgBackground from '../assets/images/background.png';
 import { URL_REGISTER } from '../endpoints';
 import { helpHttpAsync } from '../helpers/helpHttpAsync';
 import SweetAlertToast from '../components/SweetAlertToast';
@@ -21,13 +20,13 @@ const RegisterPage = () => {
       const response = await helpHttpAsync().post(URL_REGISTER, options);
 
       if (response == '¡Registro correcto!') {
-        SweetAlertToast('success', '¡Inicio correcto!');
+        SweetAlertToast('success', 'Registro correcto!');
         handleReset();
       } else {
         SweetAlertToast('error', '¡Correo o contraseña incorrecta!');
       }
     } catch (error) {
-      SweetAlertToast('error', '¡Ocurrió error al iniciar sesion!');
+      SweetAlertToast('error', '¡Ocurrió error en el registro!');
     }
   };
 
@@ -48,16 +47,7 @@ const RegisterPage = () => {
 
   return (
     <>
-      <div
-        className="container-fluid"
-        style={{
-          backgroundImage: `url(${imgBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          height: '100vh',
-        }}
-      >
+      <div className="container-fluid">
         <div className="container mb-5">
           <div className="row mt-5 mh-100 d-flex align-content-center">
             <div className="col-lg-6 d-flex align-content-center justify-content-center ">
@@ -69,6 +59,8 @@ const RegisterPage = () => {
               />
             </div>
             <div className="col-lg-5 px-4 py-5 form-login-register">
+              <h1 className="text-center text-primary mb-5">Registro</h1>
+
               <form
                 onSubmit={formik.handleSubmit}
                 className={`needs-validation ${

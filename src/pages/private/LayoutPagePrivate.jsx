@@ -3,7 +3,7 @@ import '../../assets/css/sidebar.css';
 import { useEffect } from 'react';
 import imgAvatar from '../../assets/images/avatar.png';
 
-const LayoutPrivate = () => {
+const LayoutPagePrivate = () => {
   const handleAside = () => {
     const showNavbar = (toggleId, navId, bodyId, headerId) => {
       const toggle = document.getElementById(toggleId);
@@ -45,16 +45,23 @@ const LayoutPrivate = () => {
           <nav className="nav">
             <div>
               <Link className="nav_logo text-decoration-none ">
-                <i className="fas fa-school nav_logo-icon"></i>
-                <span className="nav_logo-name">Biblioteca</span>
+                <i className="fas fa-car nav_logo-icon"></i>
+                <span className="nav_logo-name">Administracion</span>
               </Link>
               <div className="nav_list">
                 <NavLink
                   className="nav_link text-decoration-none "
-                  to="/manager"
+                  to="/Private"
                 >
                   <i className="bx bx-home-alt-2 nav_icon"></i>
                   <span className="nav_name">Inicio</span>
+                </NavLink>
+                <NavLink
+                  className="nav_link text-decoration-none "
+                  to="/Private/Formulario"
+                >
+                  <i className="fas fa-file-alt nav_icon"></i>
+                  <span className="nav_name">Formulario</span>
                 </NavLink>
               </div>
             </div>
@@ -76,4 +83,4 @@ const LayoutPrivate = () => {
   );
 };
 
-export default LayoutPrivate;
+export default LayoutPagePrivate;

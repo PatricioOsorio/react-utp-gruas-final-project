@@ -4,26 +4,38 @@ import './App.css';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 
-import LayoutPublic from './pages/public/LayoutPublic';
-import HomePublic from './pages/public/HomePublic';
+// Páginas publicas
+import LayoutPagePublic from './pages/public/LayoutPagePublic';
+import HomePagePublic from './pages/public/HomePagePublic';
+import ContactoPagePublic from './pages/public/ContactoPagePublic';
+import AcercaPagePublic from './pages/public/AcercaPagePublic';
+import FaqPagePublic from './pages/public/FaqPagePublic';
 
-import LayoutPrivate from './pages/private/LayoutPrivate';
+// Páginas privadas
+import LayoutPagePrivate from './pages/private/LayoutPagePrivate';
+import HomePagePrivate from './pages/private/HomePagePrivate';
+import FormularioPagePrivate from './pages/private/FormularioPagePrivate';
 
+// Páginas extras
 import Page404 from './pages/Page404';
-import HomePrivate from './pages/private/HomePrivate';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LayoutPublic />}>
-          <Route index element={<HomePublic />} />
+        <Route path="/" element={<LayoutPagePublic />}>
+          <Route index element={<HomePagePublic />} />
           <Route path="IniciarSesion" element={<LoginPage />} />
           <Route path="Registrar" element={<RegisterPage />} />
+          <Route path="Contacto" element={<ContactoPagePublic />} />
+          <Route path="Acerca" element={<AcercaPagePublic />} />
+          <Route path="PreguntasFrecuentes" element={<FaqPagePublic />} />
         </Route>
 
-        <Route path="/private" element={<LayoutPrivate />}>
-          <Route index element={<HomePrivate />} />
+        <Route path="/Private" element={<LayoutPagePrivate />}>
+          <Route index element={<HomePagePrivate />} />
+          <Route path="Formulario" element={<FormularioPagePrivate />} />
+
         </Route>
 
         {/* <Route path="/manager" element={<HeaderAdmin />}>

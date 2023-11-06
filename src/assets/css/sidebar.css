@@ -1,7 +1,7 @@
 :root {
   --header-height: 3rem;
   --nav-width: 68px;
-  --first-color: var(--bs-secondary);
+  --first-color: #00111f;
   --first-color-light: red;
   --white-color: #f7f6fb;
   --z-fixed: 100;
@@ -69,7 +69,7 @@ a {
   left: -30%;
   width: var(--nav-width);
   height: 100vh;
-  background-color: var(--bs-secondary);
+  background-color: #00111f;
   padding: 0.5rem 1rem 0 0;
   transition: 0.5s;
   z-index: var(--z-fixed);
