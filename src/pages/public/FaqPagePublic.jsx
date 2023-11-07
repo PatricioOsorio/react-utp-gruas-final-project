@@ -1,11 +1,9 @@
 const FaqPagePublic = () => {
   return (
     <section className="container">
-      <h1 className="text-center fw-semibold text-primary">
-        Preguntas frecuentes
-      </h1>
-
-      <p class="text-center mb-5">
+      <h1 className="fs-1 fw-semibold mb-3">Preguntas frecuentes</h1>
+      <hr className="mb-5" />
+      <p class="mb-5">
         Find the answers for the most frequently asked questions below
       </p>
 
@@ -18,7 +16,7 @@ const FaqPagePublic = () => {
           <p>
             <strong>
               <u>Absolutely!</u>
-            </strong>{' '}
+            </strong>
             We work with top payment companies which guarantees your safety and
             security. All billing information is stored on our payment
             processing partner.

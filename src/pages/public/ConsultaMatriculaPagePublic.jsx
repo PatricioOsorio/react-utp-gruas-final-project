@@ -2,9 +2,8 @@ const ConsultaMatriculaPagePublic = () => {
   return (
     <>
       <div className="container mb-5">
-        <h1 className="text-center fw-semibold text-primary">
-          Consulta matricula
-        </h1>
+        <h1 className="fs-1 fw-semibold mb-3">Consultar matricula</h1>
+        <hr className="mb-5" />
         <form>
           <div class="input-group mb-3">
             <input

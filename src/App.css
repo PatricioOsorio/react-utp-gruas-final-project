@@ -1,10 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif !important;
-  /* background-image: url('https://tailwindcss.com/_next/static/media/docs@tinypng.d9e4dcdc.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed; */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .text-gradient {
@@ -30,12 +25,28 @@ body {
 
 .form-login-register {
   background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8px 32px 0 rgba(0, 46, 111, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(15, 9, 2, 0.1);
   backdrop-filter: blur(15px);
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .bg-gray {
-  background-color: #F0EFEB !important;
+  background-color: #f0efeb !important;
+}
+
+hr {
+  border-top-color: #a8a8a8 !important;
+  border-top: px solid #a0a0a0 !important;
+}
+
+hr:before {
+  width: 40px;
+  height: 5px;
+  background-color: #5a3e1a;
+  position: absolute;
+}
+
+hr:before {
+  content: ' ';
 }

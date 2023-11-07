@@ -1,9 +1,8 @@
 const AcercaPagePublic = () => {
   return (
     <div class="container">
-      <h1 className="text-center fw-semibold text-primary">
-        Acerca de Nosotros
-      </h1>
+      <h1 className="fs-1 fw-semibold mb-3">Acerca de nosotros</h1>
+      <hr className="mb-5" />
 
       <section className="mb-5">
         <h2>Acerca de nosotros</h2>

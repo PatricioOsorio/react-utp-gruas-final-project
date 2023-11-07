@@ -61,7 +61,8 @@ const LoginPage = () => {
               />
             </div>
             <div className="col-lg-5 px-4 py-5 form-login-register">
-              <h1 className="text-center text-primary mb-5">Iniciar sesion</h1>
+              <h1 className="fs-1 fw-semibold mb-3">Iniciar sesion</h1>
+              <hr className="mb-5" />
 
               <form
                 onSubmit={formik.handleSubmit}
@@ -73,7 +74,7 @@ const LoginPage = () => {
                 noValidate
               >
                 <div className="mb-3">
-                  <label className="form-label" htmlFor="email">
+                  <label className="form-label fw-semibold" htmlFor="email">
                     Correo electronico
                   </label>
                   <input
@@ -103,7 +104,7 @@ const LoginPage = () => {
                 </div>
 
                 <div className="mb-3">
-                  <label className="form-label" htmlFor="password">
+                  <label className="form-label fw-semibold" htmlFor="password">
                     Contraseña
                   </label>
                   <input
@@ -154,7 +155,7 @@ const LoginPage = () => {
                 </div>
 
                 <div className="d-grid gap-2">
-                  <button className="btn btn-primary me-1" type="submit">
+                  <button className="btn btn-outline-primary me-1" type="submit">
                     <i className="fa-solid fa-paper-plane me-1"></i>
                     Iniciar sesion
                   </button>

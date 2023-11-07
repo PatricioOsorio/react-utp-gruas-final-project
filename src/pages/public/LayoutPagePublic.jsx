@@ -6,7 +6,7 @@ const LayoutPagePublic = () => {
     <>
       <header className="container-fluid" style={{ marginBottom: '7rem' }}>
         <nav
-          className="navbar navbar-expand-lg bg-gray fixed-top shadow"
+          className="navbar navbar-expand-lg bg-gray fixed-top"
           data-bs-theme="light"
         >
           <div className="container">
@@ -78,7 +78,7 @@ const LayoutPagePublic = () => {
                   <i className="fa-solid fa-right-to-bracket me-1"></i>Iniciar
                   sesion
                 </NavLink>
-                <NavLink className="btn btn-secondary" to="/Registrar">
+                <NavLink className="btn btn-outline-secondary" to="/Registrar">
                   <i className="fas fa-user-edit me-1"></i>Registro
                 </NavLink>
               </div>

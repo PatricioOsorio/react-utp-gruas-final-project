@@ -1,36 +1,44 @@
+import img1 from '../../assets/images/hero (1).jpg';
+import img2 from '../../assets/images/hero (2).jpg';
+import img3 from '../../assets/images/hero (3).jpeg';
+
 const HomePagePublic = () => {
   return (
     <>
       <div className="container py-3 mb-5">
-        <h1 className="text-center text-primary">Plataforma de gruas</h1>
+        <h1 className="display-5 fw-bold">Plataforma de gruas</h1>
+        <hr className="mb-5" />
+
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi labore
-          sit eveniet ducimus iste nam laborum repellendus cum dolore adipisci
-          ut vel accusantium, vero at quo, dicta maxime autem quos!
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+          cumque debitis optio veritatis porro, similique dolores eveniet
+          aliquid tempora minus, facilis quibusdam vero quae corporis assumenda
+          exercitationem velit harum eos.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum totam
+          cupiditate delectus dignissimos molestias libero. Cumque enim minus
+          odit aspernatur rem incidunt commodi quos modi aliquid hic animi
+          itaque unde, illo quas esse mollitia quae cupiditate facilis provident
+          neque eligendi, delectus eaque quis iure. Nesciunt dolore alias
+          dolores architecto optio! Doloribus ea vitae labore quas odio error
+          ipsam tempora voluptatum perspiciatis, illo suscipit placeat! Fugiat
+          at quidem quis corrupti nisi obcaecati ipsa iure dolorum vel, velit
+          illo, hic magni earum beatae. Blanditiis ipsum facere quaerat deleniti
+          optio itaque doloribus velit voluptas enim, corporis sit nostrum
+          dignissimos commodi molestias aspernatur eum!
         </p>
 
         <div id="carouselExample" className="carousel slide">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img
-                src="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2019/08/9-actividades-en-Puebla-para-descubrir-todo-el-encanto-de-la-ciudad-1024x512.png"
-                className="d-block w-100"
-                alt="..."
-              />
+              <img src={img1} className="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
-              <img
-                src="https://sisolinmobiliarias.com/blog/wp-content/uploads/2018/08/ciudad-de-puebla-y-sus-maravillas.jpg"
-                className="d-block w-100"
-                alt="..."
-              />
+              <img src={img2} className="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
-              <img
-                src="https://c0.wallpaperflare.com/preview/590/843/825/mexico-puebla-city.jpg"
-                className="d-block w-100"
-                alt="..."
-              />
+              <img src={img3} className="d-block w-100" alt="..." />
             </div>
           </div>
           <button
@@ -39,7 +47,10 @@ const HomePagePublic = () => {
             data-bs-target="#carouselExample"
             data-bs-slide="prev"
           >
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
@@ -48,37 +59,100 @@ const HomePagePublic = () => {
             data-bs-target="#carouselExample"
             data-bs-slide="next"
           >
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
             <span className="visually-hidden">Next</span>
           </button>
         </div>
       </div>
 
       <section className="bg-body-tertiary py-5 mb-5">
-        <div className="container text-center">
-          <h2 className="text-center fw-semibold text-primary">
-            Section
-          </h2>
-          <p className='text-body-secondary'>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. In
-            mollitia veniam autem nobis, debitis labore aspernatur eligendi
-            fugiat facere molestiae maxime dolorem aliquid voluptate repudiandae
-            modi ratione! Debitis, enim dolor?
+        <div className="container">
+          <h2 className="fs-1 fw-semibold">Section</h2>
+          <hr className="mb-5" />
+          <p className="text-body-secondary">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
+            iure a nihil? Aliquid et ipsam consequuntur porro ipsum obcaecati
+            voluptas veniam, beatae, qui dolore suscipit delectus accusamus,
+            ullam temporibus minima dicta quam praesentium aspernatur
+            consectetur sint ex necessitatibus. Voluptatum, sit ipsa quibusdam
+            consequuntur autem nobis tempora accusamus voluptatem quaerat
+            architecto soluta. Aliquid officia provident illum quaerat repellat
+            accusantium obcaecati tempora accusamus, cupiditate amet molestiae
+            beatae! Rem facilis cupiditate, architecto autem animi similique
+            odio dolorem est labore repudiandae impedit itaque modi quod,
+            recusandae enim perspiciatis delectus fugit perferendis? Eaque,
+            atque sapiente? Dolores odit id tempora cumque suscipit vero in
+            eligendi rem?
           </p>
-          <button className="btn btn-primary">Action</button>
+          <button className="btn btn-outline-primary">Action</button>
         </div>
       </section>
 
       <section className="container py-5">
-        <h2 className="text-center fw-semibold text-body-secondary">
-          Noticias
-        </h2>
+        <h2 className="fs-1 fw-semibold">Noticias</h2>
+        <hr className="mb-5" />
         <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. In mollitia
           veniam autem nobis, debitis labore aspernatur eligendi fugiat facere
           molestiae maxime dolorem aliquid voluptate repudiandae modi ratione!
           Debitis, enim dolor?
         </p>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card">
+              {/* <img src="..." class="card-img-top" alt="..."> */}
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              {/* <img src="..." class="card-img-top" alt="..."> */}
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              {/* <img src="..." class="card-img-top" alt="..."> */}
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              {/* <img src="..." class="card-img-top" alt="..."> */}
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">
+                  This is a longer card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </>
   );
