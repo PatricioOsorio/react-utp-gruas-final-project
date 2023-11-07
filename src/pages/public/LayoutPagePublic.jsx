@@ -43,19 +43,16 @@ const LayoutPagePublic = () => {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/">
-                    <i className="fas fa-homem me-1"></i>
                     Inicio
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/Contacto">
-                    <i className="fas fa-homem me-1"></i>
                     Contacto
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/Acerca">
-                    <i className="fas fa-homem me-1"></i>
                     Acerca de nosotros
                   </NavLink>
                 </li>
@@ -64,13 +61,11 @@ const LayoutPagePublic = () => {
                     className="nav-link"
                     to="/PreguntasFrecuentes"
                   >
-                    <i className="fas fa-homem me-1"></i>
                     Preguntas frecuentes
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/ConsultaMatricula">
-                    <i className="fas fa-homem me-1"></i>
                     Consultar matricula
                   </NavLink>
                 </li>

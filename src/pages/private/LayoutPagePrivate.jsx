@@ -44,7 +44,7 @@ const LayoutPagePrivate = () => {
         <div className="l-navbar" id="nav-bar">
           <nav className="nav">
             <div>
-              <Link className="nav_logo text-decoration-none ">
+              <Link className="nav_logo text-decoration-none " to="/Private">
                 <i className="fas fa-car nav_logo-icon"></i>
                 <span className="nav_logo-name">Administracion</span>
               </Link>

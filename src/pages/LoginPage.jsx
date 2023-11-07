@@ -5,7 +5,7 @@ import { helpHttpAsync } from '../helpers/helpHttpAsync';
 
 import { useFormik } from 'formik';
 import { loginValidationSchema } from '../validationSchemas/login';
-import { redirect } from 'react-router-dom';
+import { Navigate, redirect } from 'react-router-dom';
 
 const LoginPage = () => {
   const handleSubmit = async (form) => {
@@ -20,11 +20,10 @@ const LoginPage = () => {
 
     try {
       const response = await helpHttpAsync().post(URL_LOGIN, options);
-
       if (!response.err) {
         SweetAlertToast('success', '¡Inicio correcto!');
-        // redirect('./private')
         console.log(response);
+        redirect('/Private');
       } else {
         SweetAlertToast('error', '¡Correo o contraseña incorrecta!');
       }
