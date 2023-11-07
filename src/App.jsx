@@ -10,6 +10,7 @@ import HomePagePublic from './pages/public/HomePagePublic';
 import ContactoPagePublic from './pages/public/ContactoPagePublic';
 import AcercaPagePublic from './pages/public/AcercaPagePublic';
 import FaqPagePublic from './pages/public/FaqPagePublic';
+import ConsultaMatriculaPagePublic from './pages/public/ConsultaMatriculaPagePublic';
 
 // Páginas privadas
 import LayoutPagePrivate from './pages/private/LayoutPagePrivate';
@@ -30,6 +31,7 @@ function App() {
           <Route path="Contacto" element={<ContactoPagePublic />} />
           <Route path="Acerca" element={<AcercaPagePublic />} />
           <Route path="PreguntasFrecuentes" element={<FaqPagePublic />} />
+          <Route path="ConsultaMatricula" element={<ConsultaMatriculaPagePublic />} />
         </Route>
 
         <Route path="/Private" element={<LayoutPagePrivate />}>

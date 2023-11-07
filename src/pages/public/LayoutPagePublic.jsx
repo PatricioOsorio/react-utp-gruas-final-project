@@ -4,7 +4,7 @@ import FooterPagePublic from './FooterPagePublic';
 const LayoutPagePublic = () => {
   return (
     <>
-      <header className="container-fluid" style={{ marginBottom: '6rem' }}>
+      <header className="container-fluid" style={{ marginBottom: '7rem' }}>
         <nav
           className="navbar navbar-expand-lg bg-gray fixed-top shadow"
           data-bs-theme="light"
