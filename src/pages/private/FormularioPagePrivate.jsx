@@ -93,7 +93,7 @@ const FormularioPagePrivate = () => {
   };
 
   return (
-    <div className="card my-5 p-5 rounded border shadow bg-white ">
+    <div className="my-5 p-5 bg-white">
       <FormularioRecoleccion lastCoords={lastCoords} />
 
       {coordenadaInicio && <FormularioAsignacion distancias={distancias} />}

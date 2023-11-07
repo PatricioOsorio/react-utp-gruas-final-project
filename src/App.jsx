@@ -16,6 +16,7 @@ import ConsultaMatriculaPagePublic from './pages/public/ConsultaMatriculaPagePub
 import LayoutPagePrivate from './pages/private/LayoutPagePrivate';
 import HomePagePrivate from './pages/private/HomePagePrivate';
 import FormularioPagePrivate from './pages/private/FormularioPagePrivate';
+import DashboardPagePrivate from './pages/private/DashboardPagePrivate';
 
 // Páginas extras
 import Page404 from './pages/Page404';
@@ -37,6 +38,7 @@ function App() {
         <Route path="/Private" element={<LayoutPagePrivate />}>
           <Route index element={<HomePagePrivate />} />
           <Route path="Formulario" element={<FormularioPagePrivate />} />
+          <Route path="Dashboard" element={<DashboardPagePrivate />} />
 
         </Route>
 

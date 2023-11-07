@@ -25,7 +25,8 @@ const FormularioAsignacion = ({ distancias }) => {
 
   return (
     <div className="row">
-      <h2 className="text-primary text-center ">Punto de asignación</h2>
+      <h1 className="fs-1 fw-semibold mb-3">Punto de asignación</h1>
+      <hr className="mb-5" />
 
       {distancias && (
         <form action="" onChange={handleChange}>
@@ -36,7 +37,7 @@ const FormularioAsignacion = ({ distancias }) => {
                 key={ubicacion.lat}
                 value={`${ubicacion.lat},${ubicacion.lng}`}
               >
-                Distancia: 
+                Distancia:
                 {ubicacion.distanciaKm.toFixed(1)} km, Ubicacion:
                 {ubicacion.ubicacion}
               </option>

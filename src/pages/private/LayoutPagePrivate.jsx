@@ -1,7 +1,7 @@
 import { Link, NavLink, Outlet } from 'react-router-dom';
 import '../../assets/css/sidebar.css';
 import { useEffect } from 'react';
-import imgAvatar from '../../assets/images/avatar.png';
+import imgAvatar from '../../assets/icons/user.svg';
 
 const LayoutPagePrivate = () => {
   const handleAside = () => {
@@ -62,6 +62,13 @@ const LayoutPagePrivate = () => {
                 >
                   <i className="fas fa-file-alt nav_icon"></i>
                   <span className="nav_name">Formulario</span>
+                </NavLink>
+                <NavLink
+                  className="nav_link text-decoration-none "
+                  to="/Private/Dashboard"
+                >
+                  <i className="fas fa-chart-pie nav_icon"></i>
+                  <span className="nav_name">Dashboard</span>
                 </NavLink>
               </div>
             </div>

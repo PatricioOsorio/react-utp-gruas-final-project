@@ -68,7 +68,8 @@ const FormularioRecoleccion = ({ lastCoords }) => {
 
   return (
     <div className="row">
-      <h2 className="text-primary text-center">Punto de recoleccion</h2>
+      <h1 className="fs-1 fw-semibold mb-3">Punto de recoleccion</h1>
+      <hr className="mb-5" />
 
       <button
         className="btn btn-outline-primary mb-3"
