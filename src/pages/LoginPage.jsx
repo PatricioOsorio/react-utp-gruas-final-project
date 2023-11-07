@@ -5,9 +5,11 @@ import { helpHttpAsync } from '../helpers/helpHttpAsync';
 
 import { useFormik } from 'formik';
 import { loginValidationSchema } from '../validationSchemas/login';
-import { Navigate, redirect } from 'react-router-dom';
+import { Navigate, redirect, useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = async (form) => {
     const options = {
       headers: { 'Content-Type': 'application/json' },
@@ -23,7 +25,7 @@ const LoginPage = () => {
       if (!response.err) {
         SweetAlertToast('success', '¡Inicio correcto!');
         console.log(response);
-        redirect('/Private');
+        navigate('/private');
       } else {
         SweetAlertToast('error', '¡Correo o contraseña incorrecta!');
       }

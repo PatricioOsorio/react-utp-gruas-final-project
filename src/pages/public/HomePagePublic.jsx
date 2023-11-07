@@ -9,47 +9,47 @@ const HomePagePublic = () => {
           ut vel accusantium, vero at quo, dicta maxime autem quos!
         </p>
 
-        <div id="carouselExample" class="carousel slide">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
+        <div id="carouselExample" className="carousel slide">
+          <div className="carousel-inner">
+            <div className="carousel-item active">
               <img
                 src="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2019/08/9-actividades-en-Puebla-para-descubrir-todo-el-encanto-de-la-ciudad-1024x512.png"
-                class="d-block w-100"
+                className="d-block w-100"
                 alt="..."
               />
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <img
                 src="https://sisolinmobiliarias.com/blog/wp-content/uploads/2018/08/ciudad-de-puebla-y-sus-maravillas.jpg"
-                class="d-block w-100"
+                className="d-block w-100"
                 alt="..."
               />
             </div>
-            <div class="carousel-item">
+            <div className="carousel-item">
               <img
                 src="https://c0.wallpaperflare.com/preview/590/843/825/mexico-puebla-city.jpg"
-                class="d-block w-100"
+                className="d-block w-100"
                 alt="..."
               />
             </div>
           </div>
           <button
-            class="carousel-control-prev"
+            className="carousel-control-prev"
             type="button"
             data-bs-target="#carouselExample"
             data-bs-slide="prev"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
+            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
           </button>
           <button
-            class="carousel-control-next"
+            className="carousel-control-next"
             type="button"
             data-bs-target="#carouselExample"
             data-bs-slide="next"
           >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
+            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
           </button>
         </div>
       </div>

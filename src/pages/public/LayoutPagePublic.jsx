@@ -26,13 +26,13 @@ const LayoutPagePublic = () => {
               id="navbarTogglerDemo01"
             >
               <div>
-                <a class="navbar-brand" href="#">
+                <a className="navbar-brand" href="#">
                   <img
                     src="https://planeader.puebla.gob.mx/Secretaria/images/Logo-Puebla.png"
                     alt="Logo"
                     width="180"
                     height="auto"
-                    class="d-inline-block align-text-top"
+                    className="d-inline-block align-text-top"
                   />
                   
                 </a>
