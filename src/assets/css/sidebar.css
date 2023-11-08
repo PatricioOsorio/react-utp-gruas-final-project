@@ -38,10 +38,10 @@ a {
   padding: 0 1rem;
   z-index: var(--z-fixed);
   transition: 0.5s;
-  background: rgba( 255, 255, 255, 0.85 );
+  background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 8px 16px 0 rgba(173, 173, 173, 0.1);
-  backdrop-filter: blur( 10px );
-  -webkit-backdrop-filter: blur( 10px );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .header_toggle {
@@ -59,9 +59,9 @@ a {
   overflow: hidden;
 }
 
-  .header_img img {
-    width: 40px;
-  }
+.header_img img {
+  width: 40px;
+}
 
 .l-navbar {
   position: fixed;
@@ -69,7 +69,10 @@ a {
   left: -30%;
   width: var(--nav-width);
   height: 100vh;
-  background-color: #00111f;
+  /* background-color: #00111f; */
+  /* background-color: var(--bs-secondary); */
+  background-color: #f0efeb;
+  /* background-color: var(#f0efeb); */
   padding: 0.5rem 1rem 0 0;
   transition: 0.5s;
   z-index: var(--z-fixed);
@@ -97,25 +100,29 @@ a {
 }
 
 .nav_logo-icon {
+  /* color: var(--white-color) !important; */
+  color: var(--bs-gray) !important;
   font-size: 1.25rem;
-  color: var(--white-color);
 }
 
 .nav_logo-name {
-  color: var(--white-color);
+  /* color: var(--white-color) !important; */
+  color: var(--bs-gray) !important;
   font-weight: 700;
 }
 
 .nav_link {
   position: relative;
-  color: var(--bs-primary) !important;
+  /* color: var(--bs-primary) !important; */
+  /* color: var(--bs-light) !important; */
+  color: var(--bs-gray) !important;
   margin-bottom: 1.5rem;
   transition: 0.3s;
 }
 
-  .nav_link:hover {
-    color: var(--white-color) !important;
-  }
+.nav_link:hover {
+  color: var(--bs-dark) !important;
+}
 
 .nav_icon {
   font-size: 1.25rem;
@@ -130,17 +137,17 @@ a {
 }
 
 .active {
-  color: var(--white-color);
+  color: var(--bs-dark) !important;
 }
 
-  .active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 2px;
-    height: 32px;
-    background-color: var(--white-color);
-  }
+.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--bs-dark);
+}
 
 @media screen and (min-width: 768px) {
   .body {
@@ -158,9 +165,9 @@ a {
     height: 40px;
   }
 
-    .header_img img {
-      width: 45px;
-    }
+  .header_img img {
+    width: 45px;
+  }
 
   .l-navbar {
     left: 0;

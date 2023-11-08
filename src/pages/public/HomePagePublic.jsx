@@ -1,6 +1,7 @@
 import img1 from '../../assets/images/hero (1).jpg';
 import img2 from '../../assets/images/hero (2).jpg';
 import img3 from '../../assets/images/hero (3).jpeg';
+import img4 from '../../assets/images/hero (4).jpg';
 
 const HomePagePublic = () => {
   return (
@@ -32,13 +33,16 @@ const HomePagePublic = () => {
         <div id="carouselExample" className="carousel slide">
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={img1} className="d-block w-100" alt="..." />
+              <img src={img4} className="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
               <img src={img2} className="d-block w-100" alt="..." />
             </div>
             <div className="carousel-item">
               <img src={img3} className="d-block w-100" alt="..." />
+            </div>
+            <div className="carousel-item">
+              <img src={img1} className="d-block w-100" alt="..." />
             </div>
           </div>
           <button
@@ -67,6 +71,18 @@ const HomePagePublic = () => {
           </button>
         </div>
       </div>
+
+      <section className="bg-body-tertiary py-5 mb-5">
+        <div className="container">
+          <h2 className="fs-1 fw-semibold">Gobierno de México</h2>
+          <hr className="mb-5" />
+          <video
+            src="https://framework-gb.cdn.gob.mx/landing/multimedia/4ta_Transformacion.mp4"
+            autoPlay
+            controls
+          ></video>
+        </div>
+      </section>
 
       <section className="bg-body-tertiary py-5 mb-5">
         <div className="container">

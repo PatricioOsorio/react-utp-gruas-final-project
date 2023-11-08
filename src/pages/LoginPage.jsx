@@ -13,9 +13,9 @@ const LoginPage = () => {
   const handleSubmit = async (form) => {
     const options = {
       headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
+      // credentials: 'include',
       body: {
-        userName: form.email,
+        correo: form.email,
         password: form.password,
       },
     };
@@ -98,9 +98,6 @@ const LoginPage = () => {
                       {formik.errors.email}
                     </div>
                   )}
-                  {/* {formik.touched.email && !formik.errors.email && (
-                    <div className="valid-feedback">¡Parece bien!</div>
-                  )} */}
                 </div>
 
                 <div className="mb-3">
@@ -111,11 +108,6 @@ const LoginPage = () => {
                     type="password"
                     id="password"
                     name="password"
-                    // className={`form-control ${
-                    //   formik.touched.password && formik.errors.password
-                    //     ? 'is-invalid'
-                    //     : 'is-valid'
-                    // }`}
                     className={`form-control ${
                       formik.touched.password && formik.errors.password
                         ? 'is-invalid'
@@ -133,9 +125,6 @@ const LoginPage = () => {
                       {formik.errors.password}
                     </div>
                   )}
-                  {/* {formik.touched.email && !formik.errors.email && (
-                    <div className="valid-feedback">¡Parece bien!</div>
-                  )} */}
                 </div>
 
                 <div className="d-flex justify-content-between">
@@ -155,7 +144,10 @@ const LoginPage = () => {
                 </div>
 
                 <div className="d-grid gap-2">
-                  <button className="btn btn-outline-primary me-1" type="submit">
+                  <button
+                    className="btn btn-outline-primary me-1"
+                    type="submit"
+                  >
                     <i className="fa-solid fa-paper-plane me-1"></i>
                     Iniciar sesion
                   </button>

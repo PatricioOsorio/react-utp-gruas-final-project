@@ -78,9 +78,9 @@ const LayoutPagePublic = () => {
                   <i className="fa-solid fa-right-to-bracket me-1"></i>Iniciar
                   sesion
                 </NavLink>
-                <NavLink className="btn btn-outline-secondary" to="/Registrar">
+                {/* <NavLink className="btn btn-outline-secondary" to="/Registrar">
                   <i className="fas fa-user-edit me-1"></i>Registro
-                </NavLink>
+                </NavLink> */}
               </div>
             </div>
           </div>

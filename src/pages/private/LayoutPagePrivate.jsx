@@ -49,13 +49,13 @@ const LayoutPagePrivate = () => {
                 <span className="nav_logo-name">Administracion</span>
               </Link>
               <div className="nav_list">
-                <NavLink
+                {/* <NavLink
                   className="nav_link text-decoration-none "
                   to="/Private"
                 >
                   <i className="bx bx-home-alt-2 nav_icon"></i>
                   <span className="nav_name">Inicio</span>
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                   className="nav_link text-decoration-none "
                   to="/Private/Formulario"
