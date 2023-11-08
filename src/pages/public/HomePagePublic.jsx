@@ -71,18 +71,20 @@ const HomePagePublic = () => {
           </button>
         </div>
       </div>
-
+      
       <section className="bg-body-tertiary py-5 mb-5">
         <div className="container">
           <h2 className="fs-1 fw-semibold">Gobierno de México</h2>
           <hr className="mb-5" />
-          <video
-            src="https://framework-gb.cdn.gob.mx/landing/multimedia/4ta_Transformacion.mp4"
-            class="object-fit-contain"
-            autoPlay
-            controls
-            muted
-          ></video>
+          <div className="overflow-hidden">
+            <video
+              src="https://framework-gb.cdn.gob.mx/landing/multimedia/4ta_Transformacion.mp4"
+              className="w-100 h-auto"
+              autoPlay
+              controls
+              muted
+            ></video>
+          </div>
         </div>
       </section>
 
