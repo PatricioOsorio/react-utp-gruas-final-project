@@ -78,8 +78,10 @@ const HomePagePublic = () => {
           <hr className="mb-5" />
           <video
             src="https://framework-gb.cdn.gob.mx/landing/multimedia/4ta_Transformacion.mp4"
+            class="object-fit-contain"
             autoPlay
             controls
+            muted
           ></video>
         </div>
       </section>
