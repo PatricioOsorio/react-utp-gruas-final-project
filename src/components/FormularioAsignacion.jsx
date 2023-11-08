@@ -3,8 +3,9 @@ import MyMapLeaflet from './MyMapLeaflet';
 import { helpHttp } from '../helpers/helpHttp';
 import SweetAlertToast from './SweetAlertToast';
 
-const FormularioAsignacion = ({ distancias }) => {
+const FormularioAsignacion = ({ distancias, formAsignacion }) => {
   const [asignation, setAsignation] = useState(null);
+
   const handleChange = (e) => {
     const arrayCoord = e.target.value.split(',');
     const selectedLat = arrayCoord[0];
@@ -16,8 +17,8 @@ const FormularioAsignacion = ({ distancias }) => {
     );
 
     if (objetoEncontrado) {
-      // console.log('Objeto encontrado:', objetoEncontrado);
       setAsignation(objetoEncontrado);
+      formAsignacion(objetoEncontrado)
     } else {
       console.log('Objeto no encontrado');
     }

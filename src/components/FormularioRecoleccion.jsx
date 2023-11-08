@@ -3,7 +3,7 @@ import MyMapLeaflet from './MyMapLeaflet';
 import { helpHttp } from '../helpers/helpHttp';
 import SweetAlertToast from './SweetAlertToast';
 
-const FormularioRecoleccion = ({ lastCoords }) => {
+const FormularioRecoleccion = ({ lastCoords, formRecoleccion }) => {
   const [currentCoords, setCurrentCoords] = useState(null);
   const [location, setLocation] = useState(null);
 
@@ -15,6 +15,8 @@ const FormularioRecoleccion = ({ lastCoords }) => {
       .then((res) => {
         const { state, county, road, postcode } = res.address;
         setLocation({ state, county, road, postcode });
+        formRecoleccion({ state, county, road, postcode });
+
         // console.log(res.address);
       });
   };
@@ -64,6 +66,7 @@ const FormularioRecoleccion = ({ lastCoords }) => {
     reverseGeolocation(lat, lon);
     setCurrentCoords({ latitude: lat, longitude: lon });
     lastCoords([lat, lon]);
+    formRecoleccion(location);
   };
 
   return (
