@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import FormularioRecoleccion from '../../components/FormularioRecoleccion';
-import FormularioAsignacion from '../../components/FormularioAsignacion';
-import calcularDistancia from '../../components/Distances';
+import React, { useEffect, useState } from "react";
+import FormularioRecoleccion from "../../components/FormularioRecoleccion";
+import FormularioAsignacion from "../../components/FormularioAsignacion";
+import calcularDistancia from "../../components/Distances";
 import {
   URL_CORRALONES_LISTA,
   URL_SINIESTROS_REGISTRAR,
-} from '../../endpoints';
-import SweetAlertToast from '../../components/SweetAlertToast';
-import { helpHttpAsync } from '../../helpers/helpHttpAsync';
+} from "../../endpoints";
+import SweetAlertToast from "../../components/SweetAlertToast";
+import { helpHttpAsync } from "../../helpers/helpHttpAsync";
+import FormularioVehiculos from "../../components/FormularioVehiculos";
 
 const FormularioPagePrivate = () => {
   const [coordenadaInicio, setCoordenadaInicio] = useState(null);
@@ -25,7 +26,7 @@ const FormularioPagePrivate = () => {
         console.log(response);
         setCoordenadasFin(response.corralones);
       } catch (error) {
-        SweetAlertToast('error', '¡Ocurrió error al obtener corralones!');
+        SweetAlertToast("error", "¡Ocurrió error al obtener corralones!");
       }
     };
 
@@ -35,7 +36,7 @@ const FormularioPagePrivate = () => {
   useEffect(() => {
     if (coordenadasFin && coordenadaInicio) {
       const calcularDistanciasAsincrono = async () => {
-        console.log('Entra al metodo');
+        console.log("Entra al metodo");
         try {
           const promesasDistancias = coordenadasFin.map((coordenadaFin) =>
             calcularDistancia(coordenadaInicio, coordenadaFin)
@@ -75,7 +76,7 @@ const FormularioPagePrivate = () => {
 
           setDistancias(arrayCombinado);
         } catch (error) {
-          console.error('Error al calcular las distancias:', error);
+          console.error("Error al calcular las distancias:", error);
         }
       };
 
@@ -84,7 +85,7 @@ const FormularioPagePrivate = () => {
   }, [coordenadasFin, coordenadaInicio]);
 
   const lastCoords = (lastCoords) => {
-    console.log('ultimas coodesnadas', lastCoords);
+    console.log("ultimas coodesnadas", lastCoords);
     setCoordenadaInicio({ lat: lastCoords[0], lng: lastCoords[1] });
   };
 
@@ -96,34 +97,34 @@ const FormularioPagePrivate = () => {
 
   const handleClick = async () => {
     console.log(datosFormularioRecoleccion);
-    
-    const options = {
-      headers: { 'Content-Type': 'application/json' },
-      // credentials: 'include',
-      body: {
-        calle: datosFormularioRecoleccion.road,
-        colonia: datosFormularioRecoleccion.county,
-        municipio: datosFormularioRecoleccion.county,
-        cp: datosFormularioRecoleccion.postcode,
-        idAsesor: 1,
-      },
-    };
+    SweetAlertToast("success", "Siguiente fase");
+    // const options = {
+    //   headers: { "Content-Type": "application/json" },
+    //   // credentials: 'include',
+    //   body: {
+    //     calle: datosFormularioRecoleccion.road,
+    //     colonia: datosFormularioRecoleccion.county,
+    //     municipio: datosFormularioRecoleccion.county,
+    //     cp: datosFormularioRecoleccion.postcode,
+    //     idAsesor: 1,
+    //   },
+    // };
 
-    try {
-      const response = await helpHttpAsync().post(
-        URL_SINIESTROS_REGISTRAR,
-        options
-      );
-      if (!response.err) {
-        SweetAlertToast('success', 'Registro exitoso!');
-        console.log(response);
-      } else {
-        SweetAlertToast('error', 'Registro incorrecto!');
-      }
-    } catch (error) {
-      console.log(error);
-      SweetAlertToast('error', '¡Ocurrió error al registrar!');
-    }
+    // try {
+    //   const response = await helpHttpAsync().post(
+    //     URL_SINIESTROS_REGISTRAR,
+    //     options
+    //   );
+    //   if (!response.err) {
+    //     SweetAlertToast("success", "Registro exitoso!");
+    //     console.log(response);
+    //   } else {
+    //     SweetAlertToast("error", "Registro incorrecto!");
+    //   }
+    // } catch (error) {
+    //   console.log(error);
+    //   SweetAlertToast("error", "¡Ocurrió error al registrar!");
+    // }
   };
 
   return (
@@ -134,16 +135,18 @@ const FormularioPagePrivate = () => {
       />
 
       {distancias && (
+        <button className="mt-3 btn btn-outline-primary" onClick={handleClick}>
+          Registrar siniestro
+        </button>
+      )}
+
+      <FormularioVehiculos/>
+
+      {distancias && (
         <FormularioAsignacion
           distancias={distancias}
           formAsignacion={formAsignacion}
         />
-      )}
-
-      {distancias && (
-        <button className="mt-3 btn btn-outline-primary" onClick={handleClick}>
-          Registrar siniestro
-        </button>
       )}
     </div>
   );
