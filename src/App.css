@@ -4,11 +4,9 @@ body {
 
 .text-gradient {
   color: #4defa7;
-  background-image: -webkit-linear-gradient(
-    130deg,
-    #051937 0%,
-    var(--bs-primary) 100%
-  );
+  background-image: -webkit-linear-gradient(130deg,
+      #051937 0%,
+      var(--bs-primary) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   text-fill-color: transparent;
@@ -35,6 +33,10 @@ body {
   background-color: #f0efeb !important;
 }
 
+.bg-green {
+  background-color: #12322b !important;
+}
+
 hr {
   border-top-color: #a8a8a8 !important;
   border-top: px solid #a0a0a0 !important;
@@ -49,4 +51,11 @@ hr:before {
 
 hr:before {
   content: ' ';
+}
+
+.footer-svg {
+  background-image: url(https://framework-gb.cdn.gob.mx/landing/img/pleca.svg);
+  background-color: #12322b;
+  background-repeat: repeat-x;
+  height: 100px;
 }
