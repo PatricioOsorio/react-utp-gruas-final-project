@@ -53,14 +53,22 @@ const LoginPage = () => {
       <div className="container-fluid">
         <div className="container mb-5">
           <div className="row mt-5 mh-100 d-flex align-content-center">
-            <div className="col-lg-6 d-flex align-content-center justify-content-center ">
+            <div
+              className="col-lg-6 d-flex align-content-center justify-content-center "
+              data-aos="fade-right"
+              data-aos-once="true"
+            >
               <img
                 src={img}
                 className="img-fluid"
                 style={{ maxWidth: '350px' }}
               />
             </div>
-            <div className="col-lg-5 px-4 py-5 form-login-register">
+            <div
+              className="col-lg-5 px-4 py-5 form-login-register"
+              data-aos="fade-left"
+              data-aos-once="true"
+            >
               <h1 className="fs-1 fw-semibold mb-3">Iniciar sesion</h1>
               <hr className="mb-5" />
 

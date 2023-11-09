@@ -1,26 +1,34 @@
 import { useEffect, useRef } from 'react';
+import language from 'datatables.net-plugins/i18n/es-ES.mjs';
 
 const ConsultaMatriculaPagePublic = () => {
   const tableRef = useRef();
 
   useEffect(() => {
-    $(tableRef.current).DataTable();
+    const table = $(tableRef.current).DataTable({
+      language,
+    });
+
+    // Destruir la tabla antes de volver a inicializarla para evitar el error
+    return () => {
+      table.destroy();
+    };
   }, []);
 
   return (
     <>
-      <div className="container mb-5">
+      <div className="container mb-5" data-aos="fade-left" data-aos-once="true">
         <h1 className="fs-1 fw-semibold mb-3">Consultar matricula</h1>
         <hr className="mb-5" />
         <form>
-          <div class="input-group mb-3">
+          <div className="input-group mb-3">
             <input
               type="text"
-              class="form-control form-control-lg"
+              className="form-control form-control-lg"
               placeholder="Busca aquí tu matricula"
             />
             <button
-              class="btn btn-outline-primary"
+              className="btn btn-outline-primary"
               type="button"
               id="button-addon2"
             >
@@ -29,12 +37,12 @@ const ConsultaMatriculaPagePublic = () => {
           </div>
         </form>
 
-        <div class="table-responsive my-5">
+        <div className="table-responsive p-3">
           <table
             ref={tableRef}
-            class="table table-striped table-hover table-borderless align-middle text-center m-0"
+            className="table table-striped table-hover table-borderless align-middle text-center m-0"
           >
-            <thead class="table-dark">
+            <thead className="table-dark">
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">First</th>

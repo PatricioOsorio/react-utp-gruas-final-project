@@ -16,7 +16,7 @@ const FooterPagePublic = () => {
               <div className="col-lg-3">
                 <div>
                   <h3>Enlaces</h3>
-                  <ul class="list-unstyled">
+                  <ul className="list-unstyled">
                     <li>
                       <a
                         className="text-light link-underline-light link-underline-opacity-0 link-underline-opacity-75-hover"
@@ -57,7 +57,7 @@ const FooterPagePublic = () => {
                 </div>
               </div>
               <div className="col-lg-3">
-                <h3>¿Qué es gob.mx?</h3>
+                <h3>¿Qué es GPD (Grúas de Puebla)?</h3>
                 <p>
                   Es el portal único de trámites, información y participación
                   ciudadana.
@@ -68,7 +68,7 @@ const FooterPagePublic = () => {
                     <u>Leer más</u>
                   </a>
                 </p>
-                <ul class="list-unstyled">
+                <ul className="list-unstyled">
                   <li>
                     <a
                       href="https://datos.gob.mx"
@@ -129,14 +129,14 @@ const FooterPagePublic = () => {
               </div>
               <div className="col-lg-3">
                 <h3>Síguenos en:</h3>
-                <ul id="social" class="list-inline">
-                  <li class="list-inline-item">
+                <ul id="social" className="list-inline">
+                  <li className="list-inline-item">
                     <a
                       href="https://www.facebook.com/gobmexico/"
                       target="_blank"
                       red="Facebook"
                       title="Enlace a facebook abre en una nueva ventana"
-                      class="sendEstFooterRs share-info"
+                      className="sendEstFooterRs share-info"
                     >
                       <img
                         alt="Facebook"
@@ -144,13 +144,13 @@ const FooterPagePublic = () => {
                       />
                     </a>
                   </li>
-                  <li class="list-inline-item">
+                  <li className="list-inline-item">
                     <a
                       href="https://twitter.com/GobiernoMX"
                       target="_blank"
                       red="Twitter"
                       title="Enlace a twitter abre en una nueva ventana"
-                      class="sendEstFooterRs share-info"
+                      className="sendEstFooterRs share-info"
                     >
                       <img
                         alt="Twitter"

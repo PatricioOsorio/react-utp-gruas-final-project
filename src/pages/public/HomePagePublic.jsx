@@ -6,8 +6,12 @@ import img4 from '../../assets/images/hero (4).jpg';
 const HomePagePublic = () => {
   return (
     <>
-      <div className="container py-3 mb-5">
-        <h1 className="display-5 fw-bold">Plataforma de gruas</h1>
+      <div
+        className="container py-3 mb-5"
+        data-aos="fade-right"
+        data-aos-once="true"
+      >
+        <h1 className="display-5 fw-bold">GDP (Grúas de Puebla)</h1>
         <hr className="mb-5" />
 
         <p>
@@ -71,8 +75,12 @@ const HomePagePublic = () => {
           </button>
         </div>
       </div>
-      
-      <section className="bg-body-tertiary py-5 mb-5">
+
+      <section
+        className="bg-body-tertiary py-5 mb-5"
+        data-aos="fade-left"
+        data-aos-once="true"
+      >
         <div className="container">
           <h2 className="fs-1 fw-semibold">Gobierno de México</h2>
           <hr className="mb-5" />
@@ -88,7 +96,11 @@ const HomePagePublic = () => {
         </div>
       </section>
 
-      <section className="bg-body-tertiary py-5 mb-5">
+      <section
+        className="bg-body-tertiary py-5 mb-5"
+        data-aos="fade-right"
+        data-aos-once="true"
+      >
         <div className="container">
           <h2 className="fs-1 fw-semibold">Section</h2>
           <hr className="mb-5" />
@@ -111,7 +123,11 @@ const HomePagePublic = () => {
         </div>
       </section>
 
-      <section className="container py-5">
+      <section
+        className="container py-5"
+        data-aos="fade-left"
+        data-aos-once="true"
+      >
         <h2 className="fs-1 fw-semibold">Noticias</h2>
         <hr className="mb-5" />
         <p>
@@ -120,13 +136,13 @@ const HomePagePublic = () => {
           molestiae maxime dolorem aliquid voluptate repudiandae modi ratione!
           Debitis, enim dolor?
         </p>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card">
-              {/* <img src="..." class="card-img-top" alt="..."> */}
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
+        <div className="row row-cols-1 row-cols-md-3 g-4">
+          <div className="col">
+            <div className="card">
+              {/* <img src="..." className="card-img-top" alt="..."> */}
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
                   This is a longer card with supporting text below as a natural
                   lead-in to additional content. This content is a little bit
                   longer.
@@ -134,12 +150,12 @@ const HomePagePublic = () => {
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card">
-              {/* <img src="..." class="card-img-top" alt="..."> */}
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
+          <div className="col">
+            <div className="card">
+              {/* <img src="..." className="card-img-top" alt="..."> */}
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
                   This is a longer card with supporting text below as a natural
                   lead-in to additional content. This content is a little bit
                   longer.
@@ -147,24 +163,24 @@ const HomePagePublic = () => {
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card">
-              {/* <img src="..." class="card-img-top" alt="..."> */}
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
+          <div className="col">
+            <div className="card">
+              {/* <img src="..." className="card-img-top" alt="..."> */}
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
                   This is a longer card with supporting text below as a natural
                   lead-in to additional content.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card">
-              {/* <img src="..." class="card-img-top" alt="..."> */}
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
+          <div className="col">
+            <div className="card">
+              {/* <img src="..." className="card-img-top" alt="..."> */}
+              <div className="card-body">
+                <h5 className="card-title">Card title</h5>
+                <p className="card-text">
                   This is a longer card with supporting text below as a natural
                   lead-in to additional content. This content is a little bit
                   longer.

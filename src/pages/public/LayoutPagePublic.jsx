@@ -1,9 +1,21 @@
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import FooterPagePublic from './FooterPagePublic';
+import { useEffect } from 'react';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 const LayoutPagePublic = () => {
   return (
     <>
+      <ScrollToTop />
       <header className="container-fluid" style={{ marginBottom: '7rem' }}>
         <nav
           className="navbar navbar-expand-lg bg-gray fixed-top"
@@ -34,7 +46,6 @@ const LayoutPagePublic = () => {
                     height="auto"
                     className="d-inline-block align-text-top"
                   />
-                  
                 </a>
                 {/* <NavLink className="navbar-brand fw-bold ms-auto" to="/">
                   Gruas
@@ -57,10 +68,7 @@ const LayoutPagePublic = () => {
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink
-                    className="nav-link"
-                    to="/PreguntasFrecuentes"
-                  >
+                  <NavLink className="nav-link" to="/PreguntasFrecuentes">
                     Preguntas frecuentes
                   </NavLink>
                 </li>

@@ -1,6 +1,6 @@
 const FaqPagePublic = () => {
   return (
-    <section className="container">
+    <section className="container"  data-aos="fade-left" data-aos-once="true">
       <h1 className="fs-1 fw-semibold mb-3">Preguntas frecuentes</h1>
       <hr className="mb-5" />
       <p class="mb-5">

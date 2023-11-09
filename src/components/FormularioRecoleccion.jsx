@@ -86,8 +86,8 @@ const FormularioRecoleccion = ({ lastCoords, formRecoleccion }) => {
           {location && (
             <>
               <div className="col-12 mb-3">
-                <label className="form-label" htmlFor="cp">
-                  Código postal
+                <label className="form-label fw-semibold" htmlFor="cp">
+                  Código :
                 </label>
                 <input
                   id="cp"
@@ -99,8 +99,8 @@ const FormularioRecoleccion = ({ lastCoords, formRecoleccion }) => {
               </div>
 
               <div className="col-12 mb-3">
-                <label className="form-label" htmlFor="estado">
-                  Estado
+                <label className="form-label fw-semibold" htmlFor="estado">
+                  Estado:
                 </label>
                 <input
                   id="estado"
@@ -112,8 +112,8 @@ const FormularioRecoleccion = ({ lastCoords, formRecoleccion }) => {
               </div>
 
               <div className="col-12 mb-3">
-                <label className="form-label" htmlFor="municipio">
-                  Municipio / Alcaldía
+                <label className="form-label fw-semibold" htmlFor="municipio">
+                  Municipio / Alcaldía:
                 </label>
                 <input
                   id="municipio"
@@ -125,8 +125,8 @@ const FormularioRecoleccion = ({ lastCoords, formRecoleccion }) => {
               </div>
 
               <div className="col-12 mb-3">
-                <label className="form-label" htmlFor="calle">
-                  Calle
+                <label className="form-label fw-semibold" htmlFor="calle">
+                  Calle:
                 </label>
                 <input
                   id="calle"

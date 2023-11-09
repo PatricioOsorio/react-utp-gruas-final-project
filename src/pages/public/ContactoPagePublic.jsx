@@ -23,13 +23,13 @@ const ContactoPagePublic = () => {
             <li class="breadcrumb-item">Data</li>
           </ol>
         </nav> */}
-        <div className="row">
-          <h1 className="fs-1 fw-semibold mb-3">Contacto</h1>
-          <hr className="mb-5" />
-          <div className="col-lg-6">
+        <div className="row" >
+          <div className="col-lg-6" data-aos="fade-right" data-aos-once="true">
+            <h1 className="fs-1 fw-semibold mb-3">Contacto</h1>
+            <hr className="mb-5" />
             <form>
               <div class="row mb-3">
-                <label for="nombre" class="col-sm-2 col-form-label fw-semibold">
+                <label htmlFor="nombre" class="col-sm-2 col-form-label fw-semibold">
                   Nombre:
                 </label>
                 <div class="col-sm-10">
@@ -37,14 +37,14 @@ const ContactoPagePublic = () => {
                     type="email"
                     class="form-control"
                     id="nombre"
-                    placeholder='Nombre'
+                    placeholder="Nombre"
                     required
                   />
                 </div>
               </div>
               <div class="row mb-3">
                 <label
-                  for="contraseña"
+                  htmlFor="contraseña"
                   class="col-sm-2 col-form-label fw-semibold"
                 >
                   Correo electrónico:
@@ -54,14 +54,14 @@ const ContactoPagePublic = () => {
                     type="password"
                     class="form-control"
                     id="contraseña"
-                    placeholder='Correo electrónico'
+                    placeholder="Correo electrónico"
                     required
                   />
                 </div>
               </div>
               <div class="row mb-3">
                 <label
-                  for="mensaje"
+                  htmlFor="mensaje"
                   class="col-sm-2 col-form-label fw-semibold"
                 >
                   Mensaje:
@@ -71,7 +71,7 @@ const ContactoPagePublic = () => {
                     class="form-control"
                     id="mensaje"
                     rows="5"
-                    placeholder='Mensaje'
+                    placeholder="Mensaje"
                     required
                   ></textarea>
                 </div>
@@ -90,7 +90,7 @@ const ContactoPagePublic = () => {
               </div>
             </form>
           </div>
-          <div className="col-lg-6  d-flex align-content-center justify-content-center">
+          <div className="col-lg-6  d-flex align-content-center justify-content-center" data-aos="fade-left" data-aos-once="true">
             <img
               src={img}
               className="img-fluid"
@@ -100,7 +100,11 @@ const ContactoPagePublic = () => {
         </div>
       </div>
 
-      <section className="bg-body-tertiary py-5">
+      <section
+        className="bg-body-tertiary py-5"
+        data-aos="fade-right"
+        data-aos-once="true"
+      >
         <div className="container">
           <h2 className="fs-1 fw-semibold">Section</h2>
           <hr className="mb-5" />

@@ -1,6 +1,6 @@
 const HomePagePrivate = () => {
   return (
-    <div className="container pb-5">
+    <div className="container pb-5" data-aos="fade-right" data-aos-once="true">
       <h1 className="fs-1 fw-semibold mb-3">¡Bienvenido!</h1>
       <hr className="mb-5" />
       <p>
@@ -9,24 +9,24 @@ const HomePagePrivate = () => {
         vel accusantium, vero at quo, dicta maxime autem quos!
       </p>
 
-      <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="fw-semibold">Title</h1>
-          <p class="col-md-8 fs-4">
+      <div className="p-5 mb-4 bg-body-tertiary rounded-3">
+        <div className="container-fluid py-5">
+          <h1 className="fw-semibold">Title</h1>
+          <p className="col-md-8 fs-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
             doloribus soluta quas vel libero aspernatur accusamus, ex mollitia?
             Corporis atque perspiciatis dolor velit at laborum in ea inventore
             molestiae odio!
           </p>
-          <button class="btn btn-primary btn-lg" type="button">
+          <button className="btn btn-primary btn-lg" type="button">
             Example button
           </button>
         </div>
       </div>
 
-      <div class="row align-items-md-stretch">
-        <div class="col-md-6">
-          <div class="h-100 p-5 text-bg-dark rounded-3">
+      <div className="row align-items-md-stretch">
+        <div className="col-md-6">
+          <div className="h-100 p-5 text-bg-dark rounded-3">
             <h2>Title</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
@@ -34,13 +34,13 @@ const HomePagePrivate = () => {
               suscipit reiciendis enim alias, unde porro illum labore voluptas,
               in commodi molestiae dignissimos.
             </p>
-            <button class="btn btn-outline-light" type="button">
+            <button className="btn btn-outline-light" type="button">
               Example button
             </button>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+        <div className="col-md-6">
+          <div className="h-100 p-5 bg-body-tertiary border rounded-3">
             <h2>Title</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit in
@@ -48,7 +48,7 @@ const HomePagePrivate = () => {
               natus atque quam dolor, similique doloribus repellendus nobis ipsa
               voluptatibus repudiandae?
             </p>
-            <button class="btn btn-outline-secondary" type="button">
+            <button className="btn btn-outline-secondary" type="button">
               Example button
             </button>
           </div>

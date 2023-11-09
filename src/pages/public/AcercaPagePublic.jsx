@@ -1,11 +1,9 @@
 const AcercaPagePublic = () => {
   return (
     <div class="container">
-      <h1 className="fs-1 fw-semibold mb-3">Acerca de nosotros</h1>
-      <hr className="mb-5" />
-
-      <section className="mb-5">
-        <h2>Acerca de nosotros</h2>
+      <section className="mb-5" data-aos="fade-right" data-aos-once="true">
+        <h1>Acerca de nosotros</h1>
+        <hr className="mb-5" />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolores
           architecto soluta, veniam amet placeat enim sint dolore temporibus ex
@@ -14,8 +12,9 @@ const AcercaPagePublic = () => {
         </p>
       </section>
 
-      <section className="mb-5">
+      <section className="mb-5" data-aos="fade-left" data-aos-once="true">
         <h2>Nuestra Misión</h2>
+        <hr className="mb-5" />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolores
           architecto soluta, veniam amet placeat enim sint dolore temporibus ex
@@ -24,8 +23,9 @@ const AcercaPagePublic = () => {
         </p>
       </section>
 
-      <section className="mb-5">
-        <h2>Nuestra Misión</h2>
+      <section className="mb-5" data-aos="fade-right" data-aos-once="true">
+        <h2>Nuestra Visión</h2>
+        <hr className="mb-5" />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolores
           architecto soluta, veniam amet placeat enim sint dolore temporibus ex
@@ -34,8 +34,9 @@ const AcercaPagePublic = () => {
         </p>
       </section>
 
-      <section className="mb-5">
+      <section className="mb-5" data-aos="fade-left" data-aos-once="true">
         <h2>Nuestro equipo</h2>
+        <hr className="mb-5" />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolores
           architecto soluta, veniam amet placeat enim sint dolore temporibus ex

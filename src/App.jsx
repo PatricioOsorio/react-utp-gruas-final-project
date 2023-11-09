@@ -21,7 +21,19 @@ import DashboardPagePrivate from './pages/private/DashboardPagePrivate';
 // Páginas extras
 import Page404 from './pages/Page404';
 
+// Aos
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Duración de la animación en milisegundos
+      easing: 'ease-in-out', // Tipo de easing para la animación
+    });
+  }, []);
+
   return (
     <BrowserRouter>
       <Routes>
@@ -32,14 +44,16 @@ function App() {
           <Route path="Contacto" element={<ContactoPagePublic />} />
           <Route path="Acerca" element={<AcercaPagePublic />} />
           <Route path="PreguntasFrecuentes" element={<FaqPagePublic />} />
-          <Route path="ConsultaMatricula" element={<ConsultaMatriculaPagePublic />} />
+          <Route
+            path="ConsultaMatricula"
+            element={<ConsultaMatriculaPagePublic />}
+          />
         </Route>
 
         <Route path="/Private" element={<LayoutPagePrivate />}>
           <Route index element={<HomePagePrivate />} />
           <Route path="Formulario" element={<FormularioPagePrivate />} />
           <Route path="Dashboard" element={<DashboardPagePrivate />} />
-
         </Route>
 
         {/* <Route path="/manager" element={<HeaderAdmin />}>

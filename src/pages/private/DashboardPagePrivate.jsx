@@ -1,7 +1,7 @@
 const DashboardPagePrivate = () => {
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid"  data-aos="fade-right" data-aos-once="true">
           <h1 className="fs-1 fw-semibold mb-3">Dashboard</h1>
           <hr className="mb-5" />
         <div className="d-sm-flex align-items-center justify-content-between mb-4">
