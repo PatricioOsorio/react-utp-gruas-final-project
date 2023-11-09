@@ -161,6 +161,7 @@ const FormularioPagePrivate = () => {
 
   return (
     <div className="container pb-5"  data-aos="fade-right" data-aos-once="true">
+      
       <FormularioRecoleccion
         lastCoords={lastCoords}
         formRecoleccion={formRecoleccion}

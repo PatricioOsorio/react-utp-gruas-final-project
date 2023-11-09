@@ -11,7 +11,7 @@ const HomePagePublic = () => {
         data-aos="fade-right"
         data-aos-once="true"
       >
-        <h1 className="display-5 fw-bold">GDP (Grúas de Puebla)</h1>
+        <h1 className="display-5 fw-bold">GDP</h1>
         <hr className="mb-5" />
 
         <p>

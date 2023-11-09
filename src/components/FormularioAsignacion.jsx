@@ -8,6 +8,7 @@ import { URL_GRUASCORRALON_ID } from '../endpoints';
 const FormularioAsignacion = ({ distancias, formAsignacion }) => {
   const [asignation, setAsignation] = useState(null);
   const [gruas, setGruas] = useState(null);
+  const [gruaSeleccionada, setGruaSeleccionada] = useState(null);
 
   const handleChange = async (e) => {
     const selectedOption = e.target.selectedOptions[0]; // Obtén el elemento seleccionado
@@ -25,20 +26,24 @@ const FormularioAsignacion = ({ distancias, formAsignacion }) => {
     if (objetoEncontrado) {
       setAsignation(objetoEncontrado);
       formAsignacion(objetoEncontrado);
-      handleGruas();
+      handleGruas(e.target.value);
     } else {
       console.log('Objeto no encontrado');
     }
   };
 
-  const handleGruas = async () => {
+  const handleSelectGrua = (e) => {
+    console.log(e.target.value);
+  };
+
+  const handleGruas = async (idGrua) => {
     const options = {
       headers: { 'Content-Type': 'application/json' },
     };
 
     try {
       const response = await helpHttpAsync().get(
-        `${URL_GRUASCORRALON_ID}/${16}`,
+        `${URL_GRUASCORRALON_ID}/${idGrua}`,
         options
       );
       console.log(response.response);
@@ -75,8 +80,7 @@ const FormularioAsignacion = ({ distancias, formAsignacion }) => {
 
       {asignation && (
         <>
-          {' '}
-          <div className="row g-3">
+          <div className="row g-3 mb-5">
             <div className="col-md-2">
               <label htmlFor="region" className="form-label">
                 Región
@@ -144,21 +148,27 @@ const FormularioAsignacion = ({ distancias, formAsignacion }) => {
               />
             </div>
           </div>
+
           {gruas && (
-            <form>
-              <select className="form-select">
-                <option value="">Seleccione</option>
-                {gruas.map((grua) => (
-                  <option
-                    key={grua.idGrua}
-                    value={grua.idGrua}
-                    // data-coords={`${ubicacion.lat},${ubicacion.lng}`}
-                  >
-                    Marca: {grua.gruas.marca}, Tipo: {grua.tipoGrua.tipo}, color: {grua.gruas.color}
-                  </option>
-                ))}
-              </select>
-            </form>
+            <>
+              <h2>Seleccione grua</h2>
+              <hr className="mb-3" />
+              <form onChange={handleSelectGrua}>
+                <select className="form-select">
+                  <option value="">Seleccione</option>
+                  {gruas.map((grua) => (
+                    <option
+                      key={grua.gruas.idGrua}
+                      value={grua.gruas.idGrua}
+                      // data-coords={`${ubicacion.lat},${ubicacion.lng}`}
+                    >
+                      Marca: {grua.gruas.marca}, Tipo: {grua.tipoGrua.tipo},
+                      color: {grua.gruas.color}
+                    </option>
+                  ))}
+                </select>
+              </form>
+            </>
           )}
         </>
       )}

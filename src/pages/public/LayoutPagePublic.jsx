@@ -38,7 +38,7 @@ const LayoutPagePublic = () => {
               id="navbarTogglerDemo01"
             >
               <div>
-                <a className="navbar-brand" href="#">
+                <Link className="navbar-brand" to='/'>
                   <img
                     src="https://planeader.puebla.gob.mx/Secretaria/images/Logo-Puebla.png"
                     alt="Logo"
@@ -46,7 +46,7 @@ const LayoutPagePublic = () => {
                     height="auto"
                     className="d-inline-block align-text-top"
                   />
-                </a>
+                </Link>
                 {/* <NavLink className="navbar-brand fw-bold ms-auto" to="/">
                   Gruas
                 </NavLink> */}

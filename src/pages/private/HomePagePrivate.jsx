@@ -1,6 +1,6 @@
 const HomePagePrivate = () => {
   return (
-    <div className="container pb-5" data-aos="fade-right" data-aos-once="true">
+    <div className="container pb-5" >
       <h1 className="fs-1 fw-semibold mb-3">¡Bienvenido!</h1>
       <hr className="mb-5" />
       <p>
