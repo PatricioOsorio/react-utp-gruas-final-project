@@ -5,10 +5,13 @@ import SweetAlertToast from './SweetAlertToast';
 import { helpHttpAsync } from '../helpers/helpHttpAsync';
 import { URL_GRUASCORRALON_ID } from '../endpoints';
 
-const FormularioAsignacion = ({ distancias, formAsignacion }) => {
+const FormularioAsignacion = ({
+  distancias,
+  formAsignacion,
+  gruaSeleccionadaForm,
+}) => {
   const [asignation, setAsignation] = useState(null);
   const [gruas, setGruas] = useState(null);
-  const [gruaSeleccionada, setGruaSeleccionada] = useState(null);
 
   const handleChange = async (e) => {
     const selectedOption = e.target.selectedOptions[0]; // Obtén el elemento seleccionado
@@ -22,7 +25,6 @@ const FormularioAsignacion = ({ distancias, formAsignacion }) => {
       (coordenada) =>
         coordenada.lat == selectedLat && coordenada.lng == selectedlng
     );
-
     if (objetoEncontrado) {
       setAsignation(objetoEncontrado);
       formAsignacion(objetoEncontrado);
@@ -33,7 +35,7 @@ const FormularioAsignacion = ({ distancias, formAsignacion }) => {
   };
 
   const handleSelectGrua = (e) => {
-    console.log(e.target.value);
+    gruaSeleccionadaForm(e.target.value);
   };
 
   const handleGruas = async (idGrua) => {
@@ -154,7 +156,7 @@ const FormularioAsignacion = ({ distancias, formAsignacion }) => {
               <h2>Seleccione grua</h2>
               <hr className="mb-3" />
               <form onChange={handleSelectGrua}>
-                <select className="form-select">
+                <select className="form-select" name="idGrua">
                   <option value="">Seleccione</option>
                   {gruas.map((grua) => (
                     <option
